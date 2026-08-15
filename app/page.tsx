@@ -124,6 +124,22 @@ export default function Home() {
             <Cloud className="absolute top-[10%] right-[3%] w-14 sm:w-28 text-surface/70" />
           </div>
 
+          <Card className="absolute top-[36%] right-[2%] sm:right-[4%] z-20 w-48 sm:w-64 rotate-2 shadow-xl text-ink hidden lg:block">
+            <p className="font-eyebrow text-[11px] uppercase text-ink-soft mb-3">
+              Who can access this space
+            </p>
+            <ol className="space-y-1 font-heading text-sm">
+              {audience.map((a, i) => (
+                <li key={a} className="flex gap-1.5">
+                  <span className="text-ink-faint text-xs w-5 shrink-0">
+                    {String(i + 1).padStart(2, "0")}.
+                  </span>
+                  {a}
+                </li>
+              ))}
+            </ol>
+          </Card>
+
           <div className="absolute top-[3%] inset-x-0 px-6 sm:px-4">
             <div className="max-w-[1128px] mx-auto flex flex-wrap items-baseline justify-between gap-3">
               <span className="font-eyebrow text-xs uppercase text-surface/80 [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.5))]">
@@ -174,7 +190,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <ol className="space-y-1 font-heading text-sm sm:text-base">
+            <ol className="space-y-1 font-heading text-sm sm:text-base lg:hidden">
               {audience.map((a, i) => (
                 <li key={a} className="flex gap-1.5">
                   <span className="text-ink-faint text-xs w-5 shrink-0">
