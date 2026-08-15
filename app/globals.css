@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --ink: #000000;
+  --ink-soft: #575757;
+  --ink-faint: #8a8a8a;
+  --line: #000000;
+  --paper: #f7f1e2;
+  --surface: #ffffff;
+
+  --yellow: #ffe816;
+  --lime: #c3ff16;
+  --pink: #f79cff;
+  --orange: #fd9800;
+  --violet: #5f5ce5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+
+  --color-yellow: var(--yellow);
+  --color-lime: var(--lime);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-violet: var(--violet);
+
+  --font-body: var(--nf-body), -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-eyebrow: var(--nf-eyebrow), monospace;
+  --font-billboard: var(--nf-billboard), monospace;
+  --font-heading: var(--nf-heading), Georgia, serif;
+  --font-display: var(--nf-display), var(--nf-body), sans-serif;
+  --font-hand: var(--nf-hand), cursive;
+  --font-malayalam: var(--nf-malayalam), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.055) 0 1px,
+      transparent 1px 56px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.055) 0 1px,
+      transparent 1px 56px
+    );
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  margin: 0;
+}
+
+.tilt-1 {
+  transform: rotate(-1deg);
+}
+.tilt-2 {
+  transform: rotate(2deg);
+}
+.tilt-3 {
+  transform: rotate(-3deg);
+}
+.tilt-4 {
+  transform: rotate(3deg);
 }
