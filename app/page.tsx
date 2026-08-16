@@ -129,7 +129,7 @@ export default function Home() {
 
           <div
             aria-hidden
-            className="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-paper"
+            className="absolute inset-0 bg-gradient-to-b from-transparent from-92% sm:from-70% to-paper"
           />
 
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
