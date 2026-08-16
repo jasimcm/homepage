@@ -171,7 +171,7 @@ export default function Home() {
                 alt="TinkerSpace, written in Malayalam script"
                 width={748}
                 height={273}
-                className="w-full h-auto [filter:drop-shadow(0_2px_10px_rgba(0,0,0,0.55))]"
+                className="w-3/5 sm:w-full h-auto mx-auto [filter:drop-shadow(0_2px_10px_rgba(0,0,0,0.55))]"
                 priority
               />
             </div>
@@ -181,7 +181,7 @@ export default function Home() {
                 alt="Calicut, written in Malayalam script"
                 width={1731}
                 height={909}
-                className="w-full h-auto [filter:drop-shadow(0_2px_10px_rgba(0,0,0,0.55))]"
+                className="w-3/5 sm:w-full h-auto mx-auto [filter:drop-shadow(0_2px_10px_rgba(0,0,0,0.55))]"
                 priority
               />
             </div>
