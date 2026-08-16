@@ -69,6 +69,17 @@ const community = [
   { title: "Community Meetups", accent: "bg-pink", body: "The space is open to communities across Malabar. Developer groups, design communities, robotics clubs, student groups, open-source communities, and anyone who wants to bring people together around technology." },
 ];
 
+const partners = [
+  { name: "ClusterDev", logo: "/img/partners/clusterdev.png" },
+  { name: "Eduport", logo: "/img/partners/eduport.png" },
+  { name: "Fantacode", logo: "/img/partners/fantacode.avif" },
+  { name: "Institute of Palliative Medicine", logo: "/img/partners/institute-of-palliative-medicine.png" },
+  { name: "Mozilor", logo: "/img/partners/mozilor.svg" },
+  { name: "Samagata", logo: "/img/partners/samagata.svg" },
+  { name: "Lascade", logo: "/img/partners/lascade.jpeg" },
+  { name: "Microcompany", logo: "/img/partners/microcompany.png" },
+];
+
 const faqs = [
   { q: "Is TinkerSpace Calicut a co-working space?", a: "No. It's a community makerspace built for learning, experimentation, collaboration, and building with technology." },
   { q: "Do I need to pay to use the space?", a: "No. TinkerSpace is free and open to the community." },
@@ -106,11 +117,19 @@ export default function Home() {
       <section className="relative pb-24 sm:pb-28">
         <div className="relative w-full min-h-[620px] sm:min-h-0 sm:aspect-[1717/916] overflow-hidden">
           <Image
+            src={withBasePath("/img/hero-building-day-mobile.png")}
+            alt="Illustrated rendering of the TinkerSpace Calicut building"
+            fill
+            sizes="100vw"
+            className="object-cover sm:hidden"
+            priority
+          />
+          <Image
             src={withBasePath("/img/hero-building-day.png")}
             alt="Illustrated rendering of the TinkerSpace Calicut building"
             fill
             sizes="100vw"
-            className="object-cover sm:object-contain"
+            className="hidden sm:block sm:object-contain"
             priority
           />
 
@@ -178,7 +197,7 @@ export default function Home() {
         <div className="relative max-w-[1128px] mx-auto px-6 sm:px-4">
           <Card
             padding="p-4 sm:p-6"
-            className="absolute -top-20 sm:-top-28 right-4 sm:right-16 z-20 w-48 sm:w-72 -rotate-2 shadow-xl text-ink"
+            className="absolute -top-40 sm:-top-28 right-4 sm:right-16 z-20 w-48 sm:w-72 -rotate-2 shadow-xl text-ink"
           >
             <p className="font-eyebrow text-[10px] sm:text-[11px] uppercase text-ink-soft mb-2 sm:mb-3">
               We are open to
@@ -355,6 +374,27 @@ export default function Home() {
             />
           </div>
         </WindowFrame>
+      </Section>
+
+      <Section id="partners">
+        <Eyebrow>Partners</Eyebrow>
+        <p className="max-w-2xl text-ink-soft mb-8">
+          TinkerSpace Calicut is built with support from organisations who
+          believe in open access to technology and community-led learning.
+        </p>
+        <div className="flex flex-wrap items-center gap-x-10 gap-y-8">
+          {partners.map((p) => (
+            <div key={p.name} className="relative h-9 sm:h-11 w-28 sm:w-36">
+              <Image
+                src={withBasePath(p.logo)}
+                alt={p.name}
+                fill
+                sizes="150px"
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section className="bg-surface border-y border-line" id="faq">
