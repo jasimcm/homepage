@@ -110,7 +110,7 @@ export default function Home() {
             alt="Illustrated rendering of the TinkerSpace Calicut building"
             fill
             sizes="100vw"
-            className="object-contain"
+            className="object-cover sm:object-contain"
             priority
           />
 
