@@ -10,7 +10,7 @@ import { withBasePath } from "@/lib/basePath";
 const HOST_FORM_URL = "https://airtable.com/app9tlGzibEY33NsH/shrPqY1YsGCmrXkqW";
 const DONATE_URL = "https://fundraiser.tinkerhub.org";
 
-const openTo = ["3D Printing", "Maker Space", "VR Zone", "AR", "GPU"];
+const openTo = ["3D Printing", "Maker Space"];
 
 const audience = [
   "Young builders",
@@ -36,20 +36,14 @@ const spaces = [
     body: "A playground for people who like to build things with their hands. Electronics, microcontrollers, sensors, tools, components, and everything in between. Tinker. Break. Fix. Build again.",
   },
   {
-    name: "AI & GPU Station",
-    tilt: undefined,
-    accent: "bg-violet",
-    body: "Explore AI without needing to own expensive hardware. Experiment with machine learning, computer vision, generative AI, model training, and other compute-heavy projects using the available GPU infrastructure.",
-  },
-  {
     name: "3D Printing",
-    tilt: "tilt-2" as const,
+    tilt: undefined,
     accent: "bg-orange",
     body: "Have a digital design? Turn it into something you can actually hold. Prototype parts, enclosures, mechanical components, creative objects, and whatever else you can imagine.",
   },
   {
     name: "Event Space",
-    tilt: undefined,
+    tilt: "tilt-2" as const,
     accent: "bg-lime",
     body: "A space for the community to come together. Workshops, hackathons, meetups, talks, demos, build sessions, and everything in between. If you have something worth sharing, bring it here.",
   },
@@ -195,24 +189,21 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-[1128px] mx-auto px-6 sm:px-4">
-          <Card
-            padding="p-4 sm:p-6"
-            className="absolute -top-40 sm:-top-28 right-4 sm:right-16 z-20 w-48 sm:w-72 -rotate-2 shadow-xl text-ink"
-          >
-            <p className="font-eyebrow text-[10px] sm:text-[11px] uppercase text-ink-soft mb-2 sm:mb-3">
+          <Card className="absolute -top-44 sm:-top-28 right-4 sm:right-16 z-20 w-56 sm:w-72 -rotate-2 shadow-xl text-ink">
+            <p className="font-eyebrow text-[11px] uppercase text-ink-soft mb-3">
               We are open to
             </p>
-            <ul className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-4">
+            <ul className="flex flex-wrap gap-1.5 mb-4">
               {openTo.map((tag) => (
                 <li
                   key={tag}
-                  className="border border-line bg-paper px-1.5 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] font-eyebrow uppercase"
+                  className="border border-line bg-paper px-2 py-1 text-[10px] font-eyebrow uppercase"
                 >
                   {tag}
                 </li>
               ))}
             </ul>
-            <ol className="space-y-0.5 sm:space-y-1 font-heading text-xs sm:text-base lg:hidden">
+            <ol className="space-y-1 font-heading text-sm sm:text-base lg:hidden">
               {audience.map((a, i) => (
                 <li key={a} className="flex gap-1.5">
                   <span className="text-ink-faint text-xs w-5 shrink-0">
@@ -268,7 +259,7 @@ export default function Home() {
 
       <Section id="facilities" className="bg-surface border-y border-line">
         <Eyebrow>The Space</Eyebrow>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           {spaces.map((space) => (
             <Card key={space.name} tilt={space.tilt}>
               <span className={`inline-block h-1.5 w-10 mb-4 ${space.accent}`} />
