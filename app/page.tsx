@@ -176,21 +176,24 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-[1128px] mx-auto px-6 sm:px-4">
-          <Card className="absolute -top-20 sm:-top-28 right-4 sm:right-16 z-20 w-56 sm:w-72 -rotate-2 shadow-xl text-ink">
-            <p className="font-eyebrow text-[11px] uppercase text-ink-soft mb-3">
+          <Card
+            padding="p-4 sm:p-6"
+            className="absolute -top-20 sm:-top-28 right-4 sm:right-16 z-20 w-48 sm:w-72 -rotate-2 shadow-xl text-ink"
+          >
+            <p className="font-eyebrow text-[10px] sm:text-[11px] uppercase text-ink-soft mb-2 sm:mb-3">
               We are open to
             </p>
-            <ul className="flex flex-wrap gap-1.5 mb-4">
+            <ul className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-4">
               {openTo.map((tag) => (
                 <li
                   key={tag}
-                  className="border border-line bg-paper px-2 py-1 text-[10px] font-eyebrow uppercase"
+                  className="border border-line bg-paper px-1.5 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] font-eyebrow uppercase"
                 >
                   {tag}
                 </li>
               ))}
             </ul>
-            <ol className="space-y-1 font-heading text-sm sm:text-base lg:hidden">
+            <ol className="space-y-0.5 sm:space-y-1 font-heading text-xs sm:text-base lg:hidden">
               {audience.map((a, i) => (
                 <li key={a} className="flex gap-1.5">
                   <span className="text-ink-faint text-xs w-5 shrink-0">
