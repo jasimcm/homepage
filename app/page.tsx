@@ -109,13 +109,13 @@ export default function Home() {
   return (
     <>
       <section className="relative pb-24 sm:pb-28">
-        <div className="relative w-full min-h-[620px] sm:min-h-0 sm:aspect-[1717/916] overflow-hidden">
+        <div className="relative w-full aspect-[941/1672] sm:aspect-[1717/916] overflow-hidden">
           <Image
             src={withBasePath("/img/hero-building-day-mobile.png")}
             alt="Illustrated rendering of the TinkerSpace Calicut building"
             fill
             sizes="100vw"
-            className="object-cover sm:hidden"
+            className="object-contain sm:hidden"
             priority
           />
           <Image
