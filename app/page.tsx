@@ -9,6 +9,7 @@ import { withBasePath } from "@/lib/basePath";
 
 const HOST_FORM_URL = "https://airtable.com/app9tlGzibEY33NsH/shrPqY1YsGCmrXkqW";
 const DONATE_URL = "https://fundraiser.tinkerhub.org";
+const MAP_URL = "https://share.google/PmwSbgmSY4T4zyoRt";
 
 const openTo = ["3D Printing", "Maker Space"];
 
@@ -354,17 +355,50 @@ export default function Home() {
           </Card>
         </div>
 
-        <WindowFrame className="mt-8 max-w-2xl">
-          <div className="relative aspect-16/9">
-            <Image
-              src={withBasePath("/img/space-rendering.png")}
-              alt="Architectural rendering of the TinkerSpace Calicut building"
-              fill
-              sizes="(min-width: 768px) 672px, 100vw"
-              className="object-cover"
-            />
-          </div>
-        </WindowFrame>
+        <div className="grid sm:grid-cols-2 gap-4 mt-8 max-w-4xl">
+          <WindowFrame>
+            <div className="relative aspect-16/9">
+              <Image
+                src={withBasePath("/img/space-rendering.png")}
+                alt="Architectural rendering of the TinkerSpace Calicut building"
+                fill
+                sizes="(min-width: 768px) 336px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </WindowFrame>
+
+          <a
+            href={MAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <WindowFrame className="h-full transition-colors group-hover:bg-surface">
+              <div className="relative aspect-16/9 flex flex-col items-center justify-center gap-2 text-center px-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="w-7 h-7 text-ink"
+                  aria-hidden
+                >
+                  <path
+                    d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="12" cy="9.5" r="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <p className="font-heading text-lg">TinkerSpace Calicut</p>
+                <p className="font-eyebrow text-xs uppercase text-ink-soft underline group-hover:text-ink">
+                  View on Google Maps →
+                </p>
+              </div>
+            </WindowFrame>
+          </a>
+        </div>
       </Section>
 
       <Section id="partners">
